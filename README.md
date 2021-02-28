@@ -13,6 +13,19 @@ Django based shop application. It provides following features
 
 You can see more screens of the app in [showcase](showcase) catalog.
 
+<p float="left">
+  
+<img src="https://github.com/edytafraszczak/dj-shop/blob/main/showcase/1.PNG" width="250" height="117" style="padding:10px">
+<img src="https://github.com/edytafraszczak/dj-shop/blob/main/showcase/3.PNG" width="250" height="117" style="padding:10px">
+<img src="https://github.com/edytafraszczak/dj-shop/blob/main/showcase/4.PNG" width="250" height="117" style="padding:10px">
+<img src="https://github.com/edytafraszczak/dj-shop/blob/main/showcase/6.PNG" width="250" height="117" style="padding:10px">
+<img src="https://github.com/edytafraszczak/dj-shop/blob/main/showcase/9.PNG" width="250" height="117" style="padding:10px">
+<img src="https://github.com/edytafraszczak/dj-shop/blob/main/showcase/13.PNG" width="250" height="117" style="padding:10px">
+</p>
+
+
+
+
 ## How to instructions
 - Run app
 ```

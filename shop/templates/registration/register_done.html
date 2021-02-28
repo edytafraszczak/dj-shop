@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Registration successful' %}
+{% endblock %}
+{% block content %}
+    <div class="card">
+        <h5 class="card-header">{% trans 'Registration successful' %}</h5>
+        <div class="card-body">
+            <h3>{% trans "Welcome " %} {{ new_user.first_name }}!</h3>
+            <p>{% trans "Your account has been successfully created. Now you can " %} <a
+                    href="{% url "login" %}">{% trans 'Log in' %}</a>.</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="card"><img class="card-img-top h-100 d-block" src="
+                    {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+        <div class="card-body">
+            <h4 class="card-title">{{ product.name }} ${{ product.price }}</h4>
+            <p class="card-text">{{ product.description |linebreaks }}</p>
+            <form action="{% url "shop:cart_add" product.id %}" method="post">
+                {{ cart_product_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">{% trans "Add to cart" %}</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

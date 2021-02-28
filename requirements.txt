@@ -1,0 +1,6 @@
+Django==3.1
+django-grappelli==2.14.3
+Pillow==5.1.0
+WeasyPrint==0.42.3
+django-parler
+django-crispy-forms

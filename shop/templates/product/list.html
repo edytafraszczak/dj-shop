@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center"> {% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
+    <hr>
+    {% if products %}
+        <div class="card-columns">
+            {% for product in products %}
+                <div class="card h-100"><img class="card-img-top w-100 d-block" src="
+                    {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ product.name }} <br/><span
+                                class="badge badge-info ">${{ product.price }}</span></h4>
+
+                        <p class="card-text">{{ product.description |truncatechars:30 }}</p>
+                        <a href="{{ product.get_absolute_url }}" class="btn btn-primary">{% trans "View" %}</a>
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card text-center">
+            <div class="card-body">
+                <h4 class="card-title">{% trans "Products list in this category is empty" %}</h4>
+                <p class="card-text">{% trans "Please select other category." %}</p>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
